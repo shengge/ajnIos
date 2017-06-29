@@ -1,0 +1,11 @@
+# OS X
+.DS_Store
+
+# xcode
+*.xccheckout
+*.pbxuser
+xcuserdata
+DerivedData
+*.swp
+*.ipa
+*.orig
