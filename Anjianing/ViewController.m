@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webview;
+@interface ViewController ()<UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -28,14 +28,62 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://anjiani.weyangyang.com/xmshop/index?uid=2"]]];
+    self.webView.delegate = self;
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://anjiani.weyangyang.com/xmshop/index?uid=2"]]];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    self.webView.userInteractionEnabled = NO;
 }
 
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    self.webView.userInteractionEnabled = YES;
+    NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.title = title;
+    [self setupLeftItems];
+    
+}
+
+- (void)setupLeftItems
+{
+    UIBarButtonItem *backItem = nil;
+    UIBarButtonItem *closeItem = nil;
+    
+    //后退
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setContentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+        [btn setFrame:CGRectMake(0.0f, 0.0f, 25.0f, 25.0f)];
+        [btn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+//        [btn setImage:[UIImage imageNamed:@"btn_back_grey_normal"] forState:UIControlStateNormal];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+        backItem = item; //[[UIBarButtonItem alloc] initWithCustomView:btn];
+    }
+    //关闭
+    {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setFrame:CGRectMake(0.0f, 0.0f, 44.0f, 44.0f)];
+        [btn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+        [btn setImage:[UIImage imageNamed:@"navi_item_close"] forState:UIControlStateNormal];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        closeItem = item;
+    }
+    
+    if (self.webView.canGoBack) {
+        self.navigationItem.leftBarButtonItems = @[backItem];//closeItem
+    }else{
+        self.navigationItem.leftBarButtonItems = nil;//@[backItem];
+    }
+}
+
+- (void)goBack
+{
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 @end
