@@ -37,6 +37,7 @@
     self.webView.delegate = self;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://anjiani.weyangyang.com/xmshop/index?uid=2"]]];
     [self setupProgressView];
+    self.title = @"新家妮商城";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,19 +53,16 @@
     [_progressView removeFromSuperview];
 }
 
+
+
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     
 }
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
-    NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.title = title;
     [self setupLeftItems];
 }
-
 #pragma mark - 
 - (void)goBack
 {
