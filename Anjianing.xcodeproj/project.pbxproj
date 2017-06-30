@@ -13,6 +13,10 @@
 		20D4E9601F02649500D3E2AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D4E95F1F02649500D3E2AF /* ViewController.m */; };
 		20D4E9631F02649500D3E2AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D4E9611F02649500D3E2AF /* Main.storyboard */; };
 		20D4E9651F02649500D3E2AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D4E9641F02649500D3E2AF /* Assets.xcassets */; };
+		EFD7AEC21F06590300DDBB67 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD7AEBF1F06590300DDBB67 /* NJKWebViewProgress.m */; };
+		EFD7AEC31F06590300DDBB67 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD7AEC11F06590300DDBB67 /* NJKWebViewProgressView.m */; };
+		EFD7AEC61F065ADB00DDBB67 /* ViewController+LeftNaviItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD7AEC51F065ADB00DDBB67 /* ViewController+LeftNaviItem.m */; };
+		EFD7AEC91F065B5800DDBB67 /* ViewController+Progress.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD7AEC81F065B5800DDBB67 /* ViewController+Progress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		20D4E9621F02649500D3E2AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20D4E9641F02649500D3E2AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20D4E9691F02649500D3E2AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFD7AEBE1F06590300DDBB67 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		EFD7AEBF1F06590300DDBB67 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		EFD7AEC01F06590300DDBB67 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		EFD7AEC11F06590300DDBB67 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		EFD7AEC41F065ADB00DDBB67 /* ViewController+LeftNaviItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+LeftNaviItem.h"; sourceTree = "<group>"; };
+		EFD7AEC51F065ADB00DDBB67 /* ViewController+LeftNaviItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+LeftNaviItem.m"; sourceTree = "<group>"; };
+		EFD7AEC71F065B5800DDBB67 /* ViewController+Progress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Progress.h"; sourceTree = "<group>"; };
+		EFD7AEC81F065B5800DDBB67 /* ViewController+Progress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Progress.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +70,10 @@
 		20D4E9571F02649500D3E2AF /* Anjianing */ = {
 			isa = PBXGroup;
 			children = (
+				EFD7AEBC1F0658F200DDBB67 /* Third */,
 				20D4E95B1F02649500D3E2AF /* AppDelegate.h */,
 				20D4E95C1F02649500D3E2AF /* AppDelegate.m */,
+				EFD7AECA1F065DF200DDBB67 /* ViewController+Category */,
 				20D4E95E1F02649500D3E2AF /* ViewController.h */,
 				20D4E95F1F02649500D3E2AF /* ViewController.m */,
 				20D4E9611F02649500D3E2AF /* Main.storyboard */,
@@ -77,6 +91,36 @@
 				20D4E9591F02649500D3E2AF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFD7AEBC1F0658F200DDBB67 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				EFD7AEBD1F06590300DDBB67 /* NJKWebViewProgress */,
+			);
+			name = Third;
+			sourceTree = "<group>";
+		};
+		EFD7AEBD1F06590300DDBB67 /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				EFD7AEBE1F06590300DDBB67 /* NJKWebViewProgress.h */,
+				EFD7AEBF1F06590300DDBB67 /* NJKWebViewProgress.m */,
+				EFD7AEC01F06590300DDBB67 /* NJKWebViewProgressView.h */,
+				EFD7AEC11F06590300DDBB67 /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		EFD7AECA1F065DF200DDBB67 /* ViewController+Category */ = {
+			isa = PBXGroup;
+			children = (
+				EFD7AEC41F065ADB00DDBB67 /* ViewController+LeftNaviItem.h */,
+				EFD7AEC51F065ADB00DDBB67 /* ViewController+LeftNaviItem.m */,
+				EFD7AEC71F065B5800DDBB67 /* ViewController+Progress.h */,
+				EFD7AEC81F065B5800DDBB67 /* ViewController+Progress.m */,
+			);
+			name = "ViewController+Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFD7AEC61F065ADB00DDBB67 /* ViewController+LeftNaviItem.m in Sources */,
+				EFD7AEC21F06590300DDBB67 /* NJKWebViewProgress.m in Sources */,
+				EFD7AEC91F065B5800DDBB67 /* ViewController+Progress.m in Sources */,
+				EFD7AEC31F06590300DDBB67 /* NJKWebViewProgressView.m in Sources */,
 				20D4E9601F02649500D3E2AF /* ViewController.m in Sources */,
 				20D4E95D1F02649500D3E2AF /* AppDelegate.m in Sources */,
 				20D4E95A1F02649500D3E2AF /* main.m in Sources */,
