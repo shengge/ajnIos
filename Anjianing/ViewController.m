@@ -30,6 +30,7 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://anjiani.weyangyang.com/xmshop/index?uid=2"]]];
+    self.title = @"新家妮商城";
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -39,8 +40,8 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     self.webView.userInteractionEnabled = YES;
-    NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.title = title;
+   // NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+   // self.title = title;
     [self setupLeftItems];
     
 }
