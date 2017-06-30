@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "NJKWebViewProgressView.h"
+#import "NJKWebViewProgress.h"
 
+@interface ViewController : UIViewController//<UIWebViewDelegate,NJKWebViewProgressDelegate>
+
+@property (nonatomic,strong) NJKWebViewProgressView *progressView;
+@property (nonatomic,strong) NJKWebViewProgress *progressProxy;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
